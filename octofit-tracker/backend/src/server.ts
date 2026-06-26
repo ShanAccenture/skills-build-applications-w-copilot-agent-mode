@@ -2,6 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRoutes from './routes/users';
+import activityRoutes from './routes/activities';
+import teamRoutes from './routes/teams';
+import workoutRoutes from './routes/workouts';
+import leaderboardRoutes from './routes/leaderboard';
 
 dotenv.config();
 
@@ -28,11 +33,20 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running' });
 });
 
+// API Routes
+app.use('/api/users', userRoutes);
+app.use('/api/activities', activityRoutes);
+app.use('/api/teams', teamRoutes);
+app.use('/api/workouts', workoutRoutes);
+app.use('/api/leaderboard', leaderboardRoutes);
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   const codespaceName = process.env.CODESPACE_NAME;
   if (codespaceName) {
     console.log(`Codespace URL: https://${codespaceName}-8000.app.github.dev`);
+  } else {
+    console.log(`Local API base URL: http://localhost:${PORT}/api`);
   }
 });
