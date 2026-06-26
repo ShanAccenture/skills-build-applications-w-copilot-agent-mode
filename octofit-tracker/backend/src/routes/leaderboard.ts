@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { Leaderboard } from '../models/Leaderboard';
+import { Leaderboard } from '../models/Leaderboard.js';
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { Team } from '../models/Team';
+import { Team } from '../models/Team.js';
 
 const router = express.Router();
 

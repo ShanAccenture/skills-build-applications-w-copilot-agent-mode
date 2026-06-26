@@ -2,11 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRoutes from './routes/users';
-import activityRoutes from './routes/activities';
-import teamRoutes from './routes/teams';
-import workoutRoutes from './routes/workouts';
-import leaderboardRoutes from './routes/leaderboard';
+import userRoutes from './routes/users.js';
+import activityRoutes from './routes/activities.js';
+import teamRoutes from './routes/teams.js';
+import workoutRoutes from './routes/workouts.js';
+import leaderboardRoutes from './routes/leaderboard.js';
 
 dotenv.config();
 
